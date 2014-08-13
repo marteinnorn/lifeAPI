@@ -19,22 +19,21 @@ __authors__ = ['marteinn']
 import os
 import random
 import treeSpeaker
-import urllib2
 from flask import Flask
 
 # --------------------------------------------------------------------------------------------------------------------------------------------
 # PATHS
 # --------------------------------------------------------------------------------------------------------------------------------------------
 
+basePath = __file__.rstrip(__name__+'.py')
+soundFiles = basePath + 'static/sounds'
+imageFiles = basePath + 'static/images'
 
 # --------------------------------------------------------------------------------------------------------------------------------------------
 # GLOBAL VARIABLES/OBJECTS
 # --------------------------------------------------------------------------------------------------------------------------------------------
 
 app = Flask(__name__)
-basePath = __file__.rstrip(__name__+'.py')
-soundFiles = basePath + 'static/sounds'
-imageFiles = basePath + 'static/images'
 
 # --------------------------------------------------------------------------------------------------------------------------------------------
 # CODE
@@ -125,7 +124,6 @@ def imageSpeak():
 
     randomImage = getRandomImage()
     print randomImage
-    urllib2.
 
     # use the name of the file to generate a sound file
     imageTalk = randomImage.split('static/')[-1].split('.j')[0]
